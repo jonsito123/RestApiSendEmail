@@ -13,12 +13,12 @@ app.get("/",(req,res)=>{
 
   res.send("EnviarEmailPrueba")
 })
-app.post("/EnviarWasap",(req,res)=>{
+app.post("/EnviarWasap",async(req,res)=>{
 
 
 const body=req.body;
 
-var data = qs.stringify({
+var data =await qs.stringify({
     "token": process.env.KEY,
     "to": `+51${body.Celular}`,
     "body": `hola ${body.Nombres}-${body.Apellidos} tu descripcion es ${body.Informacion}`
