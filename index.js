@@ -1,5 +1,6 @@
 const express=require("express")
 const app=express();
+const cors=require("cors")
 var axios = require('axios');
 var qs = require('qs');
 
@@ -16,6 +17,7 @@ app.post("/EnviarWasap",(req,res)=>{
 
 
 const body=req.body;
+
 
 
 var data = qs.stringify({
