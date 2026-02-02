@@ -21,7 +21,7 @@ const body=req.body;
 var data = qs.stringify({
     "token": process.env.KEY,
     "to": `+51${body.Celular}`,
-    "body": `${body.Mensaje}`
+    "body": `hola ${body.Nombres}-${body.Apellidos} tu descripcion es ${body.Informacion}`
 });
 
 var config = {
