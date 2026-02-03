@@ -17,11 +17,20 @@ app.post("/EnviarWasap",async(req,res)=>{
 
 
 const body=req.body;
-console.log(body)
+
+var Celular=body.Celular;
+var Paciente=body.Paciente;
+var Monto=body.Monto;
+var Especialidad=body.Especialidad;
+var HorarioInicio=body.HorarioInicio
+var HorarioFin=body.HorarioFin
+var Fecha=body.Fecha;
+
 var data =await qs.stringify({
     "token": process.env.KEY,
-    "to": `+51${body.Celular}`,
-    "body": `¡Hola *${body.Nombres} ${body.Apellidos}*! 👋\n\n📋 *Descripción:*\n${body.Informacion}`
+    "to": `+51${Celular}`,
+    "body": `¡Hola 👨‍💼 ${Paciente}-${Monto}-${Especialidad}-${HorarioInicio}-${HorarioFin}-${Fecha} *! 👋Gracias por confiar en nosotros para cuidar de tu salud *Descripción:`
+    
 });
 console.log(data)
 var config = {
