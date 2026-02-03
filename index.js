@@ -21,15 +21,32 @@ const body=req.body;
 var Celular=body.Celular;
 var Paciente=body.Paciente;
 var Monto=body.Monto;
+var Medico=body.Medico
 var Especialidad=body.Especialidad;
 var HorarioInicio=body.HorarioInicio
+console.log(HorarioInicio)
 var HorarioFin=body.HorarioFin
 var Fecha=body.Fecha;
+var [año,mes,dia]=Fecha.split("-")
+var FechaFinal=`${dia}/${mes}/${año}`
+
+
+
+
+var mensaje=`¡Hola, ${Paciente}! 👋
+Gracias por confiar en nosotros para cuidar de tu salud. Confirmamos que tu cita ha sido registrada con éxito. ✅
+Este es el detalle de tu atención:
+🏥 Especialidad: ${Especialidad}
+👨‍⚕️ Médico: Dr. ${Medico}
+📅 Fecha: ${FechaFinal}
+🕒 Horario: ${HorarioInicio} - ${HorarioFin}
+💰 Inversión de la consulta: ${Monto} Soles
+(Puedes realizar el pago escaneando el QR de billetera electrónica que adjuntamos a continuación)`;
 
 var data =await qs.stringify({
     "token": process.env.KEY,
     "to": `+51${Celular}`,
-    "body": `¡Hola 👨‍💼 ${Paciente}-${Monto}-${Especialidad}*! 👋Gracias por confiar en nosotros para cuidar de tu salud *Descripción:`
+    "body": mensaje
     
 });
 console.log(data)
