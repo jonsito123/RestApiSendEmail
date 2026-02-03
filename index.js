@@ -29,7 +29,7 @@ var Fecha=body.Fecha;
 var data =await qs.stringify({
     "token": process.env.KEY,
     "to": `+51${Celular}`,
-    "body": `¡Hola 👨‍💼 ${Paciente}-${Monto}-${Especialidad}-${HorarioInicio}-${HorarioFin}-${Fecha} *! 👋Gracias por confiar en nosotros para cuidar de tu salud *Descripción:`
+    "body": `¡Hola 👨‍💼 ${Paciente}-${Monto}-${Especialidad}*! 👋Gracias por confiar en nosotros para cuidar de tu salud *Descripción:`
     
 });
 console.log(data)
