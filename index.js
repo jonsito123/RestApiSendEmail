@@ -27,7 +27,9 @@ var HorarioInicio=body.HorarioInicio
 console.log(HorarioInicio)
 var HorarioFin=body.HorarioFin
 var Fecha=body.Fecha;
-
+console.log(Fecha)
+console.log(HorarioFin)
+console.log(HorarioInicio)
 var mensaje=`¡Hola, ${Paciente}! 👋
 Gracias por confiar en nosotros para cuidar de tu salud. Confirmamos que tu cita ha sido registrada con éxito. ✅
 Este es el detalle de tu atención:
