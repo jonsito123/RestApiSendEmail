@@ -17,7 +17,7 @@ app.post("/EnviarWasap",async(req,res)=>{
 
 
 const body=req.body;
-
+console.log(body)
 var Celular=body.Celular;
 var Paciente=body.Paciente;
 var Monto=body.Monto;
@@ -27,18 +27,13 @@ var HorarioInicio=body.HorarioInicio
 console.log(HorarioInicio)
 var HorarioFin=body.HorarioFin
 var Fecha=body.Fecha;
-var [año,mes,dia]=Fecha.split("-")
-var FechaFinal=`${dia}/${mes}/${año}`
-
-
-
 
 var mensaje=`¡Hola, ${Paciente}! 👋
 Gracias por confiar en nosotros para cuidar de tu salud. Confirmamos que tu cita ha sido registrada con éxito. ✅
 Este es el detalle de tu atención:
 🏥 Especialidad: ${Especialidad}
 👨‍⚕️ Médico: Dr. ${Medico}
-📅 Fecha: ${FechaFinal}
+📅 Fecha: ${Fecha}
 🕒 Horario: ${HorarioInicio} - ${HorarioFin}
 💰 Inversión de la consulta: ${Monto} Soles
 (Puedes realizar el pago escaneando el QR de billetera electrónica que adjuntamos a continuación)`;
