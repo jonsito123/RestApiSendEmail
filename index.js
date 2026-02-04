@@ -56,7 +56,7 @@ var config = {
   },
   data : data
 };
-
+/*para axios lo mejor*/
 axios(config)
 .then(function (response) {
   console.log(JSON.stringify(response.data));
