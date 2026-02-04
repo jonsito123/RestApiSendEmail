@@ -38,7 +38,7 @@ Este es el detalle de tu atención:
 📅 Fecha: ${Fecha}
 🕒 Horario: ${HorarioInicio} - ${HorarioFin}
 💰 Inversión de la consulta: ${Monto} Soles
-💳 Pago Link :https://file-example.s3-accelerate.amazonaws.com/images/test.jpg
+💳 ¡Genial Puedes|! puedes para pagar por este link :https://file-example.s3-accelerate.amazonaws.com/images/test.jpg
 (Puedes realizar el pago escaneando el QR de billetera electrónica que adjuntamos a continuación)`;
 
 var data =await qs.stringify({
