@@ -17,19 +17,16 @@ app.post("/EnviarWasap",async(req,res)=>{
 
 
 const body=req.body;
-console.log(body)
 var Celular=body.Celular;
+var PagoLink=body.PagoLink
 var Paciente=body.Paciente;
 var Monto=body.Monto;
 var Medico=body.Medico
 var Especialidad=body.Especialidad;
 var HorarioInicio=body.HorarioInicio
-console.log(HorarioInicio)
 var HorarioFin=body.HorarioFin
 var Fecha=body.Fecha;
-console.log(Fecha)
-console.log(HorarioFin)
-console.log(HorarioInicio)
+
 var mensaje=`¡Hola, ${Paciente}! 👋
 Gracias por confiar en nosotros para cuidar de tu salud. Confirmamos que tu cita ha sido registrada con éxito. ✅
 Este es el detalle de tu atención:
@@ -38,7 +35,7 @@ Este es el detalle de tu atención:
 📅 Fecha: ${Fecha}
 🕒 Horario: ${HorarioInicio} - ${HorarioFin}
 💰 Inversión de la consulta: ${Monto} Soles
-💳 ¡Genial Puedes|! puedes para pagar por este link :https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=0002010102113932d24c262b66865752860e8c2df8480b2d5204561153036045802PE5906YAPERO6004Lima6304BCBA
+💳 ¡Genial Puedes|! puedes para pagar por este link :${PagoLink}
 (Puedes realizar el pago escaneando el QR de billetera electrónica que adjuntamos a continuación)`;
 
 var data =await qs.stringify({
