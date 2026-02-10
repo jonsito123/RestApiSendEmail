@@ -18,7 +18,6 @@ app.post("/EnviarWasap",async(req,res)=>{
 
 const body=req.body;
 var Celular=body.Celular;
-var PagoLink=body.PagoLink
 var Paciente=body.Paciente;
 var Monto=body.Monto;
 var Medico=body.Medico
@@ -26,7 +25,7 @@ var Especialidad=body.Especialidad;
 var HorarioInicio=body.HorarioInicio
 var HorarioFin=body.HorarioFin
 var Fecha=body.Fecha;
-
+console.log(body)
 var mensaje=`¡Hola, ${Paciente}! 👋
 Gracias por confiar en nosotros para cuidar de tu salud. Confirmamos que tu cita ha sido registrada con éxito. ✅
 Este es el detalle de tu atención:
@@ -35,7 +34,7 @@ Este es el detalle de tu atención:
 📅 Fecha: ${Fecha}
 🕒 Horario: ${HorarioInicio} - ${HorarioFin}
 💰 Inversión de la consulta: ${Monto} Soles
-💳 ¡Genial Puedes|! puedes para pagar por este link :${PagoLink}
+💳 ¡Genial Puedes|! puedes para pagar por este link :www.google.com
 (Puedes realizar el pago escaneando el QR de billetera electrónica que adjuntamos a continuación)`;
 
 var data =await qs.stringify({
@@ -47,7 +46,7 @@ var data =await qs.stringify({
 console.log(data)
 var config = {
   method: 'post',
-  url: 'https://api.ultramsg.com/instance160710/messages/chat',
+  url: 'https://api.ultramsg.com/instance161519/messages/chat',
   headers: {  
     'Content-Type': 'application/x-www-form-urlencoded'
   },
@@ -66,7 +65,7 @@ axios(config)
   })
 })
 .catch(function (error) {
-  console.log(error);
+  console.log(error)
   res.send({
     Estado:0,
     mensaje:"Error al enviar el mensaje"
