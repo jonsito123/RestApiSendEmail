@@ -3,6 +3,7 @@ const app=express();
 const cors=require("cors")
 var axios = require('axios');
 var qs = require('qs');
+const { Body } = require("twilio/lib/twiml/MessagingResponse");
 
 require("dotenv").config();
 
@@ -25,6 +26,7 @@ var Especialidad=body.Especialidad;
 var HorarioInicio=body.HorarioInicio
 var HorarioFin=body.HorarioFin
 var Fecha=body.Fecha;
+var PagoLink=body.PagoLink
 console.log(body)
 var mensaje=`¡Hola, ${Paciente}! 👋
 Gracias por confiar en nosotros para cuidar de tu salud. Confirmamos que tu cita ha sido registrada con éxito. ✅
@@ -34,7 +36,7 @@ Este es el detalle de tu atención:
 📅 Fecha: ${Fecha}
 🕒 Horario: ${HorarioInicio} - ${HorarioFin}
 💰 Inversión de la consulta: ${Monto} Soles
-💳 ¡Genial Puedes|! puedes para pagar por este link :www.google.com
+💳 ¡Genial Puedes|! puedes para pagar por este link :${PagoLink}
 (Puedes realizar el pago escaneando el QR de billetera electrónica que adjuntamos a continuación)`;
 
 var data =await qs.stringify({
